@@ -146,7 +146,7 @@
     <!-- FORM -->
     <section class="py-20 bg-gray-100 text-center">
       <h3 class="text-3xl font-semibold mb-6">お問い合わせ</h3>
-      <form class="max-w-2xl mx-auto bg-white p-6 rounded-xl shadow-lg">
+      <form id="contactForm" class="max-w-2xl mx-auto bg-white p-6 rounded-xl shadow-lg" onsubmit="handleSubmit(event)">
         <div class="mb-4">
           <label for="name" class="block text-gray-800 text-lg mb-2">お名前</label>
           <input type="text" id="name" name="name" class="w-full px-4 py-2 border rounded-md" required />
@@ -161,8 +161,26 @@
         </div>
         <button type="submit" class="bg-blue-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-600 transition duration-300">送信</button>
       </form>
+
+      <!-- Confirmation Message -->
+      <div id="confirmationMessage" class="mt-6 text-lg text-green-600 hidden">
+        ご入力いただいた内容は正常に送信されました。ありがとうございます！
+      </div>
     </section>
   </main>
+
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault(); // Prevent form from refreshing the page
+      const confirmationMessage = document.getElementById('confirmationMessage');
+      confirmationMessage.classList.remove('hidden'); // Show confirmation message
+
+      // Optionally, you can send the form data using AJAX to a server here
+      // For now, this just shows a success message
+      document.getElementById('contactForm').reset(); // Reset form after submission
+    }
+  </script>
+
 
 </body>
 </html>

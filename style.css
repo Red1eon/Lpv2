@@ -1,0 +1,39 @@
+/* CSS Keyframe Animation for Rotating Images */
+@keyframes rotateSlides {
+    0% {
+      transform: translateX(0);
+    }
+    33.33% {
+      transform: translateX(-100%);
+    }
+    66.66% {
+      transform: translateX(-200%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  .animate-rotateSlides {
+    display: flex;
+    animation: rotateSlides 15s infinite ease-in-out;
+  }
+  
+  /* Additional Styles for the Hero Section */
+  .fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease-out forwards;
+  }
+  
+  .delay-1 {
+    animation-delay: 0.4s;
+  }
+  
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
